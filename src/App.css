@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+:root {
+  --dark-square-color: #598646;
+  --light-square-color: #f5e5c3;
+  --background-fallen: rgb(49, 48, 48);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.board {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.App-header {
-  background-color: #282c34;
+.container {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: rgb(34,34,34);
+}
+
+.board-container {
+  width: 600px;
+  height: 600px;
+}
+
+.square {
+  width: 12.5%;
+  height: 12.5%;
+}
+
+.promote-square {
+  width: 50%;
+  height: 50%;
+}
+
+.square-black {
+  /*background: #B59963;*/
+  background: var(--dark-square-color);
+}
+
+.square-white {
+  /*background: #F0d9b5;*/
+  background: var(--light-square-color);
+}
+
+.board-square {
+  width: 100%;
+  height: 100%;
+}
+
+.piece-container {
+  cursor: grab;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.piece {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.vertical-text {
+  text-orientation: upright;
+  writing-mode: vertical-lr;
   color: white;
+  font-weight: 200;
+  font-size: 24px;
+  padding: 10px;
+  font-family: 'JetBrains Mono', monospace;
 }
 
-.App-link {
-  color: #61dafb;
+.vertical-text button {
+  margin-top: 40px;
+  border: 1px solid darkgray;
+  background: rgb(34,34,34);
+  border-radius: 10px;
+  transition: 200ms;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.vertical-text span {
+  font-size: 16px;
 }
+
+.vertical-text button:hover {
+  border: 1px solid white;
+  transition: 200ms;
+  background: rgb(34,34,34);
+  border-radius: 10px;
+}
+
+.coordinates-dark {
+  position: fixed;
+  z-index: 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--dark-square-color);
+}
+
+.coordinates-light {
+  position: fixed;
+  z-index: 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--light-square-color);
+
+}
+
+.letter {
+  margin: 55px;
+  margin-left: 60px;
+
+}
+
+#aLetter {
+  color: black;
+}
+
+.fallen-container {
+  width: 600px;
+  height: 45px;
+  align-items: center;
+  background: var(--background-fallen);
+}
+
+.fallen-container img {
+  cursor: auto;
+  width: 7%;
+  height: 7%;
+}
+
