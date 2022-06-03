@@ -16,7 +16,12 @@
   flex-wrap: wrap;
 }
 
-.container {
+.grid-container {
+  display: grid;
+
+}
+
+.app-container {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -72,6 +77,13 @@
   cursor: pointer;
 }
 
+.horizontal-text {
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
 .vertical-text {
   text-orientation: upright;
   writing-mode: vertical-lr;
@@ -88,28 +100,60 @@
   background: rgb(34,34,34);
   border-radius: 10px;
   transition: 200ms;
-
 }
+
+.buttonReset {
+  position: fixed;
+  margin: 0px 0px 550px 850px;
+  border: 1px solid darkgray;
+  background: rgb(34, 34, 34);
+  border-radius: 10px;
+  transition: 200ms;
+}
+
 
 .vertical-text span {
   font-size: 16px;
 }
 
-.vertical-text button:hover {
+button:hover {
   border: 1px solid white;
   transition: 200ms;
   background: rgb(34,34,34);
   border-radius: 10px;
 }
 
-.coordinates-dark {
+
+
+.coordinates-dark-w {
+  user-select: none;
   position: fixed;
   z-index: 0;
   font-family: 'JetBrains Mono', monospace;
   color: var(--dark-square-color);
 }
 
-.coordinates-light {
+.coordinates-light-w {
+
+  user-select: none;
+  position: fixed;
+  z-index: 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--light-square-color);
+}
+
+.coordinates-dark-b {
+  margin: 50px 0px 0px 60px;
+  user-select: none;
+  position: fixed;
+  z-index: 0;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--dark-square-color);
+}
+
+.coordinates-light-b {
+  margin: 50px 0px 0px 65px;
+  user-select: none;
   position: fixed;
   z-index: 0;
   font-family: 'JetBrains Mono', monospace;
@@ -118,9 +162,8 @@
 }
 
 .letter {
-  margin: 55px;
-  margin-left: 60px;
-
+  margin: 55px 55px 55px 60px;
+  user-select: none;
 }
 
 #aLetter {

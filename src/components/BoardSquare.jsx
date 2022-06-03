@@ -6,7 +6,7 @@ import {gameSubject, handleMove, move} from "../Game";
 import Promote from "./Promote";
 
 
-const BoardSquare = ({ piece, black, position }) => {
+const BoardSquare = ({ piece, black, position, turn }) => {
     const [promotion, setPromotion] = useState(null);
 
     const [, drop] = useDrop({
@@ -25,19 +25,21 @@ const BoardSquare = ({ piece, black, position }) => {
                 : setPromotion(null)
         )
         return () => subscribe.unsubscribe();
-    }, [])
+    }, [position])
 
     return (
         <div className='board-square' ref={drop}>
             <Square black={black}>
 
+
+
                 {position[0] === 'a' ? (
-                    <div className={`coordinates-${black ? "light" : "dark"}`}>
+                    <div className={`coordinates-${black ? "light" : "dark"}-${turn}`}>
                         {position[1]}
                     </div>
                 ) : null}
                 {position[1] === '1' ? (
-                    <div className={`coordinates-${black ? "light" : "dark"} letter`}>
+                    <div className={`coordinates-${black ? "light" : "dark"}-${turn} letter`}>
                         {position[0]}
                     </div>
                 ) : null}

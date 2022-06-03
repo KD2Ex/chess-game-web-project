@@ -5,8 +5,9 @@ import {useEffect} from "react";
 
 let promotion = 'rnb2bnr/pppPkppp/8/4p3/7q/8/PPPP1PPP/RNBQKBNR w KQ - 1 5';
 let staleMate = '4k3/4P3/4K3/8/8/8/8/8 b - - 0 78';
+let foolsMate = 'rn1qkbnr/pp1bp2p/5p2/2pp2p1/2PP4/4P3/PP3PPP/RNBQKBNR w KQkq - 0 1'
 
-const chess = new Chess(staleMate);
+const chess = new Chess();
 
 const fallenWhite = [];
 const fallenBlack = [];
@@ -14,17 +15,21 @@ const fallenBlack = [];
 export const gameSubject = new BehaviorSubject();
 
 export function initGame() {
+    const savedGame = localStorage.getItem('savedGameFEN')
+    if (savedGame) {
+        chess.load(savedGame);
+    }
     updateGame();
 }
 
 export function resetGame() {
     chess.reset();
+    fallenWhite.length = 0;
+    fallenBlack.length = 0;
     updateGame();
 }
 
 export function handleMove(from, to) {
-
-
 
     const promotions = chess.moves({verbose: true}).filter(m => m.promotion);
 
@@ -67,8 +72,12 @@ function updateGame(pendingPromotion, fallenWhite, fallenBlack) {
         isGameOver,
         fallenWhite,
         fallenBlack,
+        turn: chess.turn(),
         result: isGameOver ? getGameResult() : null
     }
+
+    localStorage.setItem('savedGameFEN', chess.fen())
+
 
     gameSubject.next(newGame);
 }
