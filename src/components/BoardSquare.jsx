@@ -39,7 +39,7 @@ const BoardSquare = ({ piece, black, position, turn }) => {
                     </div>
                 ) : null}
                 {position[1] === '1' ? (
-                    <div className={`coordinates-${black ? "light" : "dark"}-${turn} letter`}>
+                    <div className={`coordinates-${black ? "light" : "dark"}-${turn} letter-${turn}`}>
                         {position[0]}
                     </div>
                 ) : null}
