@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import Square from "./Square";
 import Piece from "./Piece";
 import {useDrop} from "react-dnd";
-import {gameSubject, handleMove, move} from "../Game";
+import {gameSubject, handleMove, move} from "../gameLogic/Game";
 import Promote from "./Promote";
 
 

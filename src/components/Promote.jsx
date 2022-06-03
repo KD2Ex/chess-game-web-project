@@ -1,5 +1,5 @@
 import React from 'react';
-import {move} from "../Game";
+import {move} from "../gameLogic/Game";
 
 const promotionPieces = ['r', 'n', 'b', 'q'];
 

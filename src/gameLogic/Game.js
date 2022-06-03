@@ -1,6 +1,6 @@
-import {Chess} from 'chess.js';
+import {Chess} from '../../node_modules/chess.js/chess';
 import {BehaviorSubject} from 'rxjs'
-import Board from "./components/Board";
+import Board from "../components/Board";
 import {useEffect} from "react";
 
 let promotion = 'rnb2bnr/pppPkppp/8/4p3/7q/8/PPPP1PPP/RNBQKBNR w KQ - 1 5';
