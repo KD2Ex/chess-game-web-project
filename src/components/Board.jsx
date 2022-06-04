@@ -2,19 +2,19 @@ import React, {useEffect, useState} from 'react';
 import BoardSquare from "./BoardSquare";
 
 
-const Board = ({board, turn}) => {
+const Board = ({board, position}) => {
 
     const [currentBoard, setCurrentBoard] = useState([]);
     useEffect(() => {
         setCurrentBoard(
-            turn === 'w' ? board.flat() : board.flat().reverse()
+            position === 'w' ? board.flat() : board.flat().reverse()
         )
-    }, [board, turn])
+    }, [board, position])
 
     function getXYPosition(i) {
-        const x = turn === 'w' ? i % 8 : Math.abs((i % 8) - 7 );
+        const x = position === 'w' ? i % 8 : Math.abs((i % 8) - 7 );
         const y =
-            turn === 'w'
+            position === 'w'
             ? Math.abs(Math.floor(i / 8) - 7)
             : Math.floor(i / 8);
 
@@ -44,7 +44,7 @@ const Board = ({board, turn}) => {
                         piece={piece}
                         black={isBlack(i)}
                         position={getPosition(i)}
-                        turn={turn}
+                        turn={position}
                     />
                 </div>
             ))}

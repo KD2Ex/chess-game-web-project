@@ -5,12 +5,20 @@
   --background: rgb(34, 34, 34);
   --background-items: rgb(50,50,50);
   --font-color: rgb(203, 203, 203);
-}
+  --placeholder-color: rgb(117, 117, 117);
+  --button-color: #3c652b;
+  --name-back: #086ba8;
 
+}
 
 * {
   margin: 0;
   padding: 0;
+}
+
+span {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--font-color);
 }
 
 button {
@@ -24,10 +32,97 @@ button {
   margin: 10px;
 }
 
-.user-form {
+html {
+  background: var(--background);
+}
+
+.user-form  {
   margin-top: 30px !important;
   max-width: 800px;
   margin: auto;
+  background: var(--background-items);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.user-form h1 {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--font-color);
+  font-size: 20px;
+}
+
+.user-form input {
+  background: var(--background);
+  outline: none;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--font-color);
+  font-size: 14px;
+  border: 1px solid var(--placeholder-color);
+  transition: 200ms;
+}
+
+.user-form input::placeholder {
+  color: var(--placeholder-color);
+}
+
+.user-form input:focus {
+  outline: white !important;
+  border: 1px solid white;
+}
+
+.user-form input:hover {
+  transition: 200ms;
+}
+
+.user-form button {
+  margin: 10px 0px 0px 0px;
+  color: var(--font-color);
+  background: var(--button-color);
+  border-color: transparent;
+}
+
+.user-form button:hover {
+  border-color: transparent;
+  border-radius: 4px;
+  background: #598646;
+  color: var(--font-color);
+}
+
+.user-form button:active {
+  color: var(--font-color);
+  border-color: transparent;
+  border-radius: 4px;
+}
+
+
+.game-control {
+  display: inline-block;
+  position: absolute;
+  margin: 0px 0px 500px 770px;
+  width: 120px;
+}
+
+.game-control button {
+  margin: 0px 0px 0px 0px;
+  width: content-box;
+  height: content-box;
+  padding: 0px;
+}
+
+.game-control span {
+  display: flex;
+  color: white;
+  padding-left: 10px;
+  justify-content: left;
+  align-items: start;
+}
+
+.user-name {
+  background: var(--background-fallen);
+  margin: 10px 10px 10px 0px;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 5px;
 }
 
 .home {
@@ -42,13 +137,45 @@ button {
   margin: 20px;
 }
 
-
-
 .picker {
   background: var(--background-items);
   color: var(--font-color);
   user-select: none;
   border-radius: 10px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.picker-items:hover {
+  cursor: pointer;
+}
+
+
+.share-link {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: var(--font-color);
+  margin: 0px 0px 10px 20px;
+}
+.share-link button {
+  padding: 5px;
+}
+
+.share-link input {
+
+  background: var(--background-items);
+  outline: none;
+  border-radius: 8px;
+  border: 1px solid var(--font-color);
+  width: 450px;
+  height: 30px;
+  color: var(--font-color);
+  font-family: 'JetBrains Mono', monospace;
+  padding: 5px;
+}
+
+.share-link span {
+  user-select: none;
 }
 
 
@@ -127,6 +254,7 @@ button {
 }
 
 .vertical-text {
+  user-select: none;
   text-orientation: upright;
   writing-mode: vertical-lr;
   color: white;
@@ -142,16 +270,9 @@ button {
   background: rgb(34,34,34);
   border-radius: 10px;
   transition: 200ms;
+  padding: 0px;
 }
 
-.buttonReset {
-  position: fixed;
-  margin: 0px 0px 550px 850px;
-  border: 1px solid darkgray;
-  background: rgb(34, 34, 34);
-  border-radius: 10px;
-  transition: 200ms;
-}
 
 
 .vertical-text span {
@@ -164,6 +285,8 @@ button:hover {
   background: rgb(34,34,34);
   border-radius: 10px;
 }
+
+
 
 
 

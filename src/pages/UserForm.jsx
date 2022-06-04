@@ -9,31 +9,34 @@ const UserForm = () => {
         await auth.signInAnonymously()
     }
     return (
-        <form className="user-form" onSubmit={handleSubmit}>
-            <h1>Enter your name to start</h1>
-            <br/>
-            <div className="field">
-                <p className="control">
-                    <input type="text"
-                           name=""
-                           id=""
-                           className="input"
-                           placeholder="Name"
-                           value={name}
-                           onChange={e => setName(e.target.value)}
-                           required
-                    />
-                </p>
+        <div className="">
+            <form className="user-form" onSubmit={handleSubmit}>
+                <h1>Введите свое имя:</h1>
+                <br/>
+                <div className="field">
+                    <p className="control">
+                        <input type="text"
+                               name=""
+                               id=""
+                               className="input"
+                               placeholder="Name"
+                               value={name}
+                               onChange={e => setName(e.target.value)}
+                               required
+                        />
+                    </p>
 
-            </div>
-            <div className="field">
-                <p className="control">
-                    <button className="button is-success" type="submit">
-                        Pogнали
-                    </button>
-                </p>
-            </div>
-        </form>
+                </div>
+                <div className="field">
+                    <p className="control">
+                        <button className="button" type="submit">
+                            Pogнали
+                        </button>
+                    </p>
+                </div>
+            </form>
+        </div>
+
     );
 };
 

@@ -26,8 +26,9 @@ const App = () => {
                     <Home/>
                 </Route>
                 <Route path="/game/:id">
-                    <GameApp/>
+                    <GameApp type={"online"}/>
                 </Route>
+
             </Switch>
         </Router>
     );
