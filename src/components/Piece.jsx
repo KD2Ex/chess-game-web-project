@@ -10,7 +10,7 @@ const Piece = ({piece: {type, color}, position}) => {
         })
 
     });
-    const pieceImg = require(`../assets/${type}_${color}.png`);
+    const pieceImg = require(`.../assets/${type}_${color}.png`);
 
     return (
         <>
