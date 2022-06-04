@@ -7,7 +7,7 @@ const Fallen = ({fallen}) => {
             {fallen?.map((piece, i) => (
                 <img
                     key={i}
-                    src={require(`..\\src\\assets/${piece.type}_${piece.color}.png`)}
+                    src={require(`../assets/${piece.type}_${piece.color}.png`)}
                     alt=""
                     className="piece cursor-pointer"
                 />

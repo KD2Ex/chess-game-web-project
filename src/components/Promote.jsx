@@ -13,7 +13,7 @@ const Promote = ({promotion: {from, to, color}}) => {
                         className="piece-container"
                         onClick={()=> move(from, to, p)}>
                         <img
-                            src={require(`..\\src\\assets/${p}_${color}.png`)}
+                            src={require(`../assets/${p}_${color}.png`)}
                             alt=""
                             className="piece cursor-pointer"
                             />
