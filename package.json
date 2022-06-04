@@ -16,7 +16,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "5.0.0",
     "rxfire": "^4.0.0",
-    "rxjs": "^7.1.0",
+    "rxjs": "^6.6.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
